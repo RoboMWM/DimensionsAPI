@@ -27,15 +27,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.xxastaspastaxx.dimensions.essence.ES;
-import me.xxastaspastaxx.dimensions.essence.EssenceC;
 import me.xxastaspastaxx.dimensions.events.DimensionsLoadEvent;
 import me.xxastaspastaxx.dimensions.events.DimensionsUnloadEvent;
-import me.xxastaspastaxx.dimensions.factionsland.FactionLandsLF;
-import me.xxastaspastaxx.dimensions.factionsland.FactionLandsMCF;
 import me.xxastaspastaxx.dimensions.particles.Particles;
 import me.xxastaspastaxx.dimensions.portal.PortalClass;
-import me.xxastaspastaxx.dimensions.worldguard.WorldGuardRegion;
 
 public class Main extends JavaPlugin implements Listener {
 	
@@ -47,10 +42,6 @@ public class Main extends JavaPlugin implements Listener {
 	
 	public Listeners l;
 	public PortalClass portalClass;
-	public EssenceC ec;
-	public FactionLandsMCF flMCF;
-	public FactionLandsLF flLF;
-	public WorldGuardRegion wgr;
 	public Particles pac;
 	
 	//This will be used when players are using a portal
@@ -93,19 +84,6 @@ public class Main extends JavaPlugin implements Listener {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			ES.resetEssence(p);
-			ES.setEssence(p, Integer.parseInt(peff.getString("Amount")));
-		}
-		
-		if (Bukkit.getServer().getPluginManager().isPluginEnabled("Factions") && Bukkit.getServer().getPluginManager().isPluginEnabled("MassiveCore")) {
-			usingfac = true;
-			fpt = "MCF";
-		} else if (Bukkit.getServer().getPluginManager().isPluginEnabled("LegacyFactions")) {
-			usingfac = true;
-			fpt = "LF";
-		}
-		if (Bukkit.getServer().getPluginManager().isPluginEnabled("WorldGuard")) {
-			usingwg = true;
 		}
 		
 		// help // TODO
@@ -329,11 +307,6 @@ public class Main extends JavaPlugin implements Listener {
 		ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
 		boolean isokoe = true;
 		console.sendMessage("§7-=-=-=-=-=-=-=[§cDimensions§7]=-=-=-=-=-=-=-=-");
-		if (Bukkit.getVersion().contains("1.7")) {
-			console.sendMessage("§7Server is running in §cv1.7§7. Portal Essence and particles are disabled.");
-		} else if (Bukkit.getVersion().contains("1.8")) {
-			console.sendMessage("§7Server is running in §cv1.8§7. Portal particles are disabled.");
-		}
 		if (usingfac) {
 			String ft = "§4§l§nERROR!!!";
 			if (fpt.equalsIgnoreCase("MCF")) {
@@ -401,25 +374,9 @@ public class Main extends JavaPlugin implements Listener {
 		if (Bukkit.getServer().getPluginManager().isPluginEnabled(this) && isokoe) {
 			//register classes
 			portalClass = new PortalClass(this);
-			
-			if (!Bukkit.getVersion().contains("1.7")) {
-				ec = new EssenceC(this);
-			}
 
-			if (!(Bukkit.getVersion().contains("1.7") || Bukkit.getVersion().contains("1.8"))) {
-				pac = new Particles(this);
-			}
-			
-			if (usingfac) {
-				if (fpt.equalsIgnoreCase("MCF")) {
-					flMCF = new FactionLandsMCF(this);
-				} else if (fpt.equalsIgnoreCase("LF")) {
-					flLF = new FactionLandsLF(this);
-				}
-			}
-			if (usingwg) {
-				wgr = new WorldGuardRegion(this);
-			}
+			pac = new Particles(this);
+
 			l = new Listeners(this);
 			
 			instance = this;
@@ -445,19 +402,6 @@ public class Main extends JavaPlugin implements Listener {
 		
 		DimensionsUnloadEvent event = new DimensionsUnloadEvent(this);
 		 Bukkit.getServer().getPluginManager().callEvent(event);
-		//Save Essence
-		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
-			File pef = new File("plugins/Dimensions/PlayerData/"+p.getName()+"/Essence.yml");
-			YamlConfiguration peff = YamlConfiguration.loadConfiguration(pef);
-			
-			peff.set("Amount", ES.checkEssence(p));
-			
-			try {
-				peff.save(pef);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}
 	}
 	
 	private static Main instance;
@@ -633,86 +577,6 @@ public class Main extends JavaPlugin implements Listener {
 	            		console.sendMessage(prefix+"§7Please use §c/dm ess [player]");
 	            	}
    		}
-   		
-   		if (args[0].equalsIgnoreCase("set")) {
-   			iscmd = true;
-	            	if (args.length==3) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		if (Bukkit.getServer().getPlayer(args[2]) instanceof Player) {
-		            		if (Bukkit.getServer().getPlayer(args[2]).getName().contentEquals(args[2])) {
-								Player pl = Bukkit.getServer().getPlayer(args[2]);
-								ES.setEssence(pl, amo);
-								console.sendMessage(prefix+"§c"+args[2]+" §7now has §c"+ES.checkEssence(pl)+"§7 essence.");
-		            		} else {
-		            			console.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-		            		}
-	            		} else {
-	            			console.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-	            		}
-	            		} else {
-	            			console.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else {
-	            		console.sendMessage(prefix+"§7Please use §c/dm set <amo> [Player]");
-	            	}
-   		}
-   		
-   		if (args[0].equalsIgnoreCase("add")) {
-   			iscmd = true;
-	            	if (args.length==3) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		if (Bukkit.getServer().getPlayer(args[2]) instanceof Player) {
-		            		if (Bukkit.getServer().getPlayer(args[2]).getName().contentEquals(args[2])) {
-								Player pl = Bukkit.getServer().getPlayer(args[2]);
-								ES.addEssence(pl, amo);
-								console.sendMessage(prefix+"§c"+args[2]+" §7now has §c"+ES.checkEssence(pl)+"§7 essence.");
-		            		} else {
-		            			console.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-		            		}
-	            		} else {
-	            			console.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-	            		}
-	            		} else {
-	            			console.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else {
-	            		console.sendMessage(prefix+"§7Please use §c/dm add <amo> [Player]");
-	            	}
-   		}
-   		
-   		if (args[0].equalsIgnoreCase("remove")) {
-   			iscmd = true;
-	            	if (args.length==3) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		if (Bukkit.getServer().getPlayer(args[2]) instanceof Player) {
-		            		if (Bukkit.getServer().getPlayer(args[2]).getName().contentEquals(args[2])) {
-								Player pl = Bukkit.getServer().getPlayer(args[2]);
-								ES.removeEssence(pl, amo);
-								console.sendMessage(prefix+"§c"+args[2]+" §7now has §c"+ES.checkEssence(pl)+"§7 essence.");
-		            		} else {
-		            			console.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-		            		}
-	            		} else {
-	            			console.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-	            		}
-	            		} else {
-	            			console.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else {
-	            		console.sendMessage(prefix+"§7Please use §c/dm remove <amo> [Player]");
-	            	}
-   		}
-   		
-   		if (args[0].equalsIgnoreCase("spawness")) {
-   			iscmd = true;
-   			console.sendMessage("You can only spawn portal essence in-game.");
-   		}
 
    		//--------------------------------------------------\\
    		
@@ -880,165 +744,6 @@ public class Main extends JavaPlugin implements Listener {
 	         }
      		
      		// Commands \\
-     		if (args[0].equalsIgnoreCase("ess")) {
-     			iscmd = true;
-	            if (p.hasPermission("dm.ess")) { 
-	            	if (args.length == 1) {
-	            		p.sendMessage(prefix+"§7You have §c"+ES.checkEssence(p)+"§7 teleport essence.");
-	            	} else if(args.length == 2) {
-	        			File pef = new File("plugins/Dimensions/PlayerData/"+args[1]+"/Essence.yml");
-	        			YamlConfiguration peff = YamlConfiguration.loadConfiguration(pef);
-	        			if (pef.exists()) {
-			            	p.sendMessage(prefix+"§7Player §c"+args[1]+" §7have §c"+peff.getString("Amount")+"§7 teleport essence.");
-	        			} else {
-	        				String[] letter = args[1].split("");
-	        					if (letter[(letter.length-1)].equalsIgnoreCase("s")) {
-	        						p.sendMessage(prefix+"§7Could not find §c"+args[1]+"'§7 data. ");
-	        					} else {
-	        						p.sendMessage(prefix+"§7Could not find §c"+args[1]+"'s§7 data. ");
-	        					}
-	        			}
-	            	} else {
-	            		p.sendMessage(prefix+"§7Please use §c/dm ess [player]");
-	            	}
-	            } else {
-	            	p.sendMessage(prefix + noperm);
-	            }
-     		}
-     		
-     		if (args[0].equalsIgnoreCase("set")) {
-     			iscmd = true;
-	            if (p.hasPermission("dm.set")) {
-	            	if (args.length==2) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		ES.setEssence(p, amo);
-	            		p.sendMessage(prefix+"§7You now have §c"+ES.checkEssence(p)+"§7 essence.");	
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else if (args.length==3) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		if (Bukkit.getServer().getPlayer(args[2]) instanceof Player) {
-		            		if (Bukkit.getServer().getPlayer(args[2]).getName().contentEquals(args[2])) {
-								Player pl = Bukkit.getServer().getPlayer(args[2]);
-								ES.setEssence(pl, amo);
-								p.sendMessage(prefix+"§c"+args[2]+" §7now has §c"+ES.checkEssence(pl)+"§7 essence.");
-		            		} else {
-		            			p.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-		            		}
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-	            		}
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else {
-	            		p.sendMessage(prefix+"§7Please use §c/dm set <amo> [Player]");
-	            	}
-	            } else {
-	            	p.sendMessage(prefix + noperm);
-	            }
-     		}
-     		
-     		if (args[0].equalsIgnoreCase("add")) {
-     			iscmd = true;
-	            if (p.hasPermission("dm.add")) {
-	            	if (args.length==1) {
-	            		ES.addEssence(p, 1);
-	            		p.sendMessage(prefix+"§7You now have §c"+ES.checkEssence(p)+"§7 essence.");	
-	            	} else if (args.length==2) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		ES.addEssence(p, amo);
-	            		p.sendMessage(prefix+"§7You now have §c"+ES.checkEssence(p)+"§7 essence.");
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else if (args.length==3) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		if (Bukkit.getServer().getPlayer(args[2]) instanceof Player) {
-		            		if (Bukkit.getServer().getPlayer(args[2]).getName().contentEquals(args[2])) {
-								Player pl = Bukkit.getServer().getPlayer(args[2]);
-								ES.addEssence(pl, amo);
-								p.sendMessage(prefix+"§c"+args[2]+" §7now has §c"+ES.checkEssence(pl)+"§7 essence.");
-		            		} else {
-		            			p.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-		            		}
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-	            		}
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else {
-	            		p.sendMessage(prefix+"§7Please use §c/dm add <amo> [Player]");
-	            	}
-	            } else {
-	            	p.sendMessage(prefix + noperm);
-	            }
-     		}
-     		
-     		if (args[0].equalsIgnoreCase("remove")) {
-     			iscmd = true;
-	            if (p.hasPermission("dm.remove")) {
-	            	if (args.length==1) {
-	            		ES.removeEssence(p, 1);
-	            		p.sendMessage(prefix+"§7You now have §c"+ES.checkEssence(p)+"§7 essence.");	
-	            	} else if (args.length==2) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		ES.removeEssence(p, amo);
-	            		p.sendMessage(prefix+"§7You now have §c"+ES.checkEssence(p)+"§7 essence.");	
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else if (args.length==3) {
-	            		String am = args[1];
-	            		if (isInt(am)) {
-	            		int amo = Integer.parseInt(am);
-	            		if (Bukkit.getServer().getPlayer(args[2]) instanceof Player) {
-		            		if (Bukkit.getServer().getPlayer(args[2]).getName().contentEquals(args[2])) {
-								Player pl = Bukkit.getServer().getPlayer(args[2]);
-								ES.removeEssence(pl, amo);
-								p.sendMessage(prefix+"§c"+args[2]+" §7now has §c"+ES.checkEssence(pl)+"§7 essence.");
-		            		} else {
-		            			p.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-		            		}
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please make sure §c"+args[2]+"§7 is online.");
-	            		}
-	            		} else {
-	            			p.sendMessage(prefix+"§7Please use an §cinteger");
-	            		}
-	            	} else {
-	            		p.sendMessage(prefix+"§7Please use §c/dm remove <amo> [Player]");
-	            	}
-	            } else {
-	            	p.sendMessage(prefix + noperm);
-	            }
-     		}
-     		
-     		if (args[0].equalsIgnoreCase("spawness")) {
-     			iscmd = true;
-	            if (p.hasPermission("dm.spawness")) {
-	            	int x = (int) p.getLocation().getX();
-	            	int y = (int) p.getLocation().getY();
-	            	int z = (int) p.getLocation().getZ();
-	            	Location sloc = new Location(p.getWorld(), x+0.5,y,z-0.5);
-	            	ec.SpawnEssence(sloc);
-	            	p.sendMessage(prefix+"§7You spawned a §cportal essence§7 succesfully");
-            } else {
-            	p.sendMessage(prefix + noperm);
-            }
-     		}
      		//--------------------------------------------------\\
      		
      		if (!iscmd) {
@@ -1197,39 +902,6 @@ public class Main extends JavaPlugin implements Listener {
 
 		try {
 			pdlpf.save(pdLp);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		
-		
-		File pef = new File("plugins/Dimensions/PlayerData/"+p.getName()+"/Essence.yml");
-		YamlConfiguration peff = YamlConfiguration.loadConfiguration(pef);
-		
-		peff.addDefault("Amount", "0");
-		
-		 peff.options().copyDefaults(true);
-		try {
-			peff.save(pef);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		ES.resetEssence(p);
-		
-		ES.setEssence(p, Integer.parseInt(peff.getString("Amount")));
-    }
-    
-    
-    @EventHandler
-    public void onQuit(PlayerQuitEvent e) {
-    	Player p = e.getPlayer();
-    	
-		File pef = new File("plugins/Dimensions/PlayerData/"+p.getName()+"/Essence.yml");
-		YamlConfiguration peff = YamlConfiguration.loadConfiguration(pef);
-		
-		peff.set("Amount", ES.checkEssence(p));
-		
-		try {
-			peff.save(pef);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

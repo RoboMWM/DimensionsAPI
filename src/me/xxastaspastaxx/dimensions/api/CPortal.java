@@ -37,7 +37,7 @@ public class CPortal {
 	}
 	
 	public String getDisplayName() {
-		return pf.getString("DisplayName").replace("&", "ง").replace("\\ง", "&");
+		return pf.getString("DisplayName").replace("&", "ยง").replace("\\ยง", "&");
 	}
 	
 	public Location getLocation() {
@@ -86,7 +86,7 @@ public class CPortal {
 	}
 	
 	public String getNoPermissionMessage() {
-		return pf.getString("UsePermission.NoPermissionMessage").replace("&", "ง").replace("\\ง", "&").replace("{permission}", getPermissionNode()).replace("{portal}", getDisplayName());
+		return pf.getString("UsePermission.NoPermissionMessage").replace("&", "ยง").replace("\\ยง", "&").replace("{permission}", getPermissionNode()).replace("{portal}", getDisplayName());
 	}
 	
 	public boolean getChargeEnabled() {
@@ -98,7 +98,7 @@ public class CPortal {
 	}
 	
 	public String getNotEnoughMoneyMessage() {
-		return pf.getString("Charge.NotEnoughMoneyMessage").replace("&", "ง").replace("\\ง", "&").replace("{amount}", getChargeAmount()+"");
+		return pf.getString("Charge.NotEnoughMoneyMessage").replace("&", "ยง").replace("\\ยง", "&").replace("{amount}", getChargeAmount()+"");
 	}
 	
 	public boolean getEssenceEnabled() {
@@ -110,7 +110,7 @@ public class CPortal {
 	}
 	
 	public String getNotEnoughEssenceMessage() {
-		return pf.getString("Essence.NotEnoughEssenceMessage").replace("&", "ง").replace("\\ง", "&").replace("{amount}", getEssenceAmount()+"");
+		return pf.getString("Essence.NotEnoughEssenceMessage").replace("&", "ยง").replace("\\ยง", "&").replace("{amount}", getEssenceAmount()+"");
 	}
 	
 	public boolean getSendMessageEnabled() {
@@ -118,7 +118,7 @@ public class CPortal {
 	}
 	
 	public String getMessage() {
-		return pf.getString("SendMessage.Message").replace("&", "ง").replace("\\ง", "&").replace("{portal}", getDisplayName()).replace("{world}", getTeleportLocation().getWorld().getName());
+		return pf.getString("SendMessage.Message").replace("&", "ยง").replace("\\ยง", "&").replace("{portal}", getDisplayName()).replace("{world}", getTeleportLocation().getWorld().getName());
 	}
 	
 	public World getWorld() {
@@ -170,7 +170,7 @@ public class CPortal {
 	}
 	
 	public String getFactionTerritoriesDenyMessage() {
-		return pf.getString("FactionsTerritories.DenyMessage").replace("&", "ง").replace("\\ง", "&");
+		return pf.getString("FactionsTerritories.DenyMessage").replace("&", "ยง").replace("\\ยง", "&");
 	}
 	
 	public boolean getWorldGuardEnabled() {
@@ -182,7 +182,7 @@ public class CPortal {
 	}
 	
 	public String getWorldGuardDenyMessage() {
-		return pf.getString("WorldGuard.DenyMessage").replace("&", "ง").replace("\\ง", "&");
+		return pf.getString("WorldGuard.DenyMessage").replace("&", "ยง").replace("\\ยง", "&");
 	}
 	
 }

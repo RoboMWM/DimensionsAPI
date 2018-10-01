@@ -32,8 +32,8 @@ import me.xxastaspastaxx.dimensions.essence.ES;
 import me.xxastaspastaxx.dimensions.events.CreateCPortalEvent;
 import me.xxastaspastaxx.dimensions.events.DestroyCPortalEvent;
 import me.xxastaspastaxx.dimensions.events.EnterCPortalEvent;
-import net.milkbowl.vault.Vault;
-import net.milkbowl.vault.economy.Economy;
+//import net.milkbowl.vault.Vault;
+//import net.milkbowl.vault.economy.Economy;
 
 public class PortalClass implements Listener {
 	//The whole plugin is in here
@@ -49,17 +49,17 @@ public class PortalClass implements Listener {
 	      }
 	});
 	
-	private Economy economy;
+	//private Economy economy;
 	
 	public PortalClass(Plugin pl) {
 
-	    if ((Bukkit.getPluginManager().getPlugin("Vault") instanceof Vault))
-	    {
-	      RegisteredServiceProvider<Economy> service = Bukkit.getServicesManager().getRegistration(Economy.class);
-	      if (service != null) {
-	        economy = ((Economy)service.getProvider());
-	      }
-	    }
+//	    if ((Bukkit.getPluginManager().getPlugin("Vault") instanceof Vault))
+//	    {
+//	      RegisteredServiceProvider<Economy> service = Bukkit.getServicesManager().getRegistration(Economy.class);
+//	      if (service != null) {
+//	        economy = ((Economy)service.getProvider());
+//	      }
+//	    }
 	    Bukkit.getServer().getPluginManager().registerEvents(this, pl);
 	 }
 	
@@ -1340,13 +1340,13 @@ public class PortalClass implements Listener {
 			}
 					} else {
 						String m = cportal.getWorldGuardDenyMessage();
-						m = m.replace("{player}", p.getName()).replace("{region}", getRegionName(p, cportal)).replace("&", "§");
+						m = m.replace("{player}", p.getName()).replace("{region}", getRegionName(p, cportal)).replace("&", "ï¿½");
 						p.sendMessage(m);
 						us.add(p);
 					}
 				} else {
 					String m = cportal.getFactionTerritoriesDenyMessage();
-					m = m.replace("{player}", p.getName()).replace("{type}", getClaimedLandType(p, cportal)).replace("&", "§");
+					m = m.replace("{player}", p.getName()).replace("{type}", getClaimedLandType(p, cportal)).replace("&", "ï¿½");
 					p.sendMessage(m);
 					us.add(p);
 				}
@@ -2441,18 +2441,18 @@ public class PortalClass implements Listener {
 			} else if (Main.getInstance().fpt.equalsIgnoreCase("LF")) {
 				return Main.getInstance().flLF.isOnClaimedLandType(p, cportal, cportal.getTeleportLocation().getWorld());
 			} else {
-				return "§4§l§nError§7";
+				return "ï¿½4ï¿½lï¿½nErrorï¿½7";
 			}
 		}
 		
 		public boolean isInRegion(Player p, CPortal cportal) {
-			if (Main.getInstance().usingwg) {
-				if (Main.getInstance().wgr.isInRegion(p, cportal)) {
-					return true;
-				} else {
-					return false;
-				}
-			}
+//			if (Main.getInstance().usingwg) {
+//				if (Main.getInstance().wgr.isInRegion(p, cportal)) {
+//					return true;
+//				} else {
+//					return false;
+//				}
+//			}
 			return false;
 		}
 		
