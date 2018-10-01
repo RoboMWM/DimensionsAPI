@@ -1,0 +1,12 @@
+name: Dimensions
+main: me.xxastaspastaxx.dimensions.Main
+author: xXastaspastaXx
+description: Build portals like nether-portals and teleport to another world
+version: 3.1.1
+softdepend: [Factions, MassiveCore, LegacyFactions]
+depend: [Vault, WorldEdit, WorldGuard]
+commands:
+   dimensions:
+      description: Main command
+      usage: /<command>
+      aliases: [dm]

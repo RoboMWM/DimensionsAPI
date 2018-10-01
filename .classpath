@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Downloads/Vault.jar"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Downloads/MassiveCore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Downloads/Factions (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Downloads/LegacyFactions.jar"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Downloads/worldguard-6.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Desktop/Games/My Games/Minecraft/Servers/Bukkit Server/1.11.2/plugins/worldedit-bukkit-6.1.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/astaspasta/Downloads/craftbukkit-1.12.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
