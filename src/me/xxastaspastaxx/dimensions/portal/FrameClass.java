@@ -272,7 +272,7 @@ public class FrameClass {
 					    for (int blocks = 1; blocks <= rad; blocks++) {
 					        location.add(1, 0, 0);
 					        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-					        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+					        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 						        }else {
 						        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 						        	} else {
@@ -298,7 +298,7 @@ public class FrameClass {
 					    for (int blocks = 1; blocks <= rad; blocks++) {
 					        location.add(-1, 0, 0);
 					        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-					        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+					        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 						        }else {
 						        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 						        	} else {
@@ -324,7 +324,7 @@ public class FrameClass {
 					    for (int blocks = 1; blocks <= rad; blocks++) {
 					        location.add(1, 0, 0);
 					        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-					        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+					        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 						        }else {
 						        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {	
 						        	} else {
@@ -350,7 +350,7 @@ public class FrameClass {
 					    for (int blocks = 1; blocks <= rad; blocks++) {
 					        location.add(-1, 0, 0);
 					        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-					        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+					        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 						        }else {
 						        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 						        	} else {
@@ -382,7 +382,7 @@ public class FrameClass {
 					    for (int blocks = 1; blocks <= rad; blocks++) {
 					        location.add(0, 0, 1);
 					        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-					        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+					        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 						        }else {
 						        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 						        	} else {
@@ -408,7 +408,7 @@ public class FrameClass {
 				    for (int blocks = 1; blocks <= rad; blocks++) {
 				        location.add(0, 0, -1);
 				        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-				        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+				        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 					        }else {
 					        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 					        	} else {
@@ -434,7 +434,7 @@ public class FrameClass {
 				    for (int blocks = 1; blocks <= rad; blocks++) {
 				        location.add(0, 0, 1);
 				        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-				        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+				        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 					        }else {
 					        	if (location.getBlock().getType() == cportal.getMaterial()|| ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 					        	} else {
@@ -460,7 +460,7 @@ public class FrameClass {
 					    for (int blocks = 1; blocks <= rad; blocks++) {
 					        location.add(0, 0, -1);
 					        if (ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
-					        	p.sendBlockChange(location, Material.STAINED_GLASS_PANE, (byte) cportal.getGlassData());
+					        	p.sendBlockChange(location, cportal.getGlassData().createBlockData());
 						        }else {
 						        	if (location.getBlock().getType() == cportal.getMaterial() || ExtraTags.isSTAINED_GLASS_PANE(location.getBlock().getType())) {
 						        	} else {
