@@ -58,15 +58,15 @@ public class CPortal {
 	}
 	
 	public Material getMaterial() {
-		return Material.matchMaterial(pf.getString("Block").split(";")[0]);
+		return Material.matchMaterial(pf.getString("Block"));
 	}
 	
 	public int getData(){
 		return Integer.parseInt(pf.getString("Block").split(";")[1]);
 	}
 	
-	public int getGlassData() {
-		return Integer.parseInt(pf.getString("Frame"));
+	public Material getGlassData() {
+		return Material.matchMaterial(pf.getString("Frame"));
 	}
 	
 	public int getMinWidth() {
