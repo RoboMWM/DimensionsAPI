@@ -61,10 +61,6 @@ public class CPortal {
 		return Material.matchMaterial(pf.getString("Block"));
 	}
 	
-	public int getData(){
-		return Integer.parseInt(pf.getString("Block").split(";")[1]);
-	}
-	
 	public Material getGlassData() {
 		return Material.matchMaterial(pf.getString("Frame"));
 	}

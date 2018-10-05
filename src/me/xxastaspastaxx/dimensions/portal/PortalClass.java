@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+import me.xxastaspastaxx.dimensions.ExtraTags;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -777,8 +778,8 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
-				        }else {break;}	
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
+				        }else {break;}
 			        }
 			        if (up.get(cportal) == 1) {
 			        	if (location.getY() == ploc.getY()+1) {isEUp=true; break;}
@@ -799,8 +800,8 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
-				        }else {break;}	
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
+				        }else {break;}
 			        }
 			        if (up.get(cportal) == 1) {
 			        	if (location.getY() == ploc.getY()+1) {isWUp=true; break;}
@@ -821,8 +822,8 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
-				        }else {break;}	
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
+				        }else {break;}
 			        }
 			        if (down.get(cportal) == 1) {
 			        	if (location.getY() == ploc.getY()+1) {isEDown=true; break;}
@@ -843,8 +844,8 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
-				        }else {break;}	
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
+				        }else {break;}
 			        }
 			        if (down.get(cportal) == 1) {
 			        	if (location.getY() == ploc.getY()+1) {isWDown=true; break;}
@@ -857,22 +858,22 @@ public class PortalClass implements Listener {
 			        }
 			    }
 		  }
-		  
+
 		  if (isEUp && isWUp && isEDown && isWDown) {
 			  return true;
 		  } else {
 			  return false;
 		  }
 	  }
-	  
+
 	  @SuppressWarnings("deprecation")
 	public boolean hasGlassNS(CPortal cportal) {
-		
+
 		  boolean isNUp = false;
 		  boolean isSUp = false;
 		  boolean isNDown = false;
 		  boolean isSDown = false;
-		  
+
 		  Location ploc = cportal.getLocation();
 
 		  if (true) {
@@ -883,7 +884,7 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
 				        }else {break;}
 			        }
 			        if (up.get(cportal) == 1) {
@@ -905,7 +906,7 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
 				        }else {break;}
 			        }
 			        if (up.get(cportal) == 1) {
@@ -927,7 +928,7 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
 				        }else {break;}
 			        }
 			        if (down.get(cportal) == 1) {
@@ -949,8 +950,8 @@ public class PortalClass implements Listener {
 				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial()))) {
 				        }else {break;}
 			        } else {
-				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) { 
-				        }else {break;}	
+				        if (((location.getBlock().getType().equals(Material.STAINED_GLASS_PANE) && location.getBlock().getState().getRawData() == cportal.getGlassData()) && location.getBlock().getState().getRawData() == cportal.getGlassData())||(location.getBlock().getType().equals(cportal.getMaterial())&&location.getBlock().getState().getRawData() == cportal.getData())) {
+				        }else {break;}
 			        }
 			        if (down.get(cportal) == 1) {
 			        	if (location.getY() == ploc.getY()+1) {isNDown=true; break;}
@@ -963,8 +964,8 @@ public class PortalClass implements Listener {
 			        }
 			    }
 		  }
-			  
-		  
+
+
 		  if (isNUp && isSUp && isNDown && isSDown) {
 			  return true;
 		  } else {
@@ -973,16 +974,16 @@ public class PortalClass implements Listener {
 	  }
 	  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\
 /**/
-	
+
 	  @SuppressWarnings("deprecation")
 	public boolean canUsePortal(Player p, CPortal cportal, boolean charge, boolean msg) {
 		  													//  ^				^
 		  													//When its verified that player can use portal
-		  
+
 		  int hasperm = 0;
 		  int hasmoney = 0;
 		  int hasess = 0;
-		  
+
 		if (cportal.isEnabled()) {
 			if (cportal.getPermissionEnabled()) {
 				if (p.hasPermission(cportal.getPermissionNode())) {
@@ -991,7 +992,7 @@ public class PortalClass implements Listener {
 			} else {
 				hasperm=-1;
 			}
-			
+
 			if (cportal.getChargeEnabled()) {
 				if (economy.getBalance(p)>=cportal.getChargeAmount()) {
 					hasmoney=1;
@@ -999,7 +1000,7 @@ public class PortalClass implements Listener {
 			} else {
 				hasmoney=-1;
 			}
-			
+
 			if (cportal.getEssenceEnabled()) {
 				if (ES.checkEssence(p)>=cportal.getEssenceAmount()) {
 					hasess=1;
@@ -1007,7 +1008,7 @@ public class PortalClass implements Listener {
 			} else {
 				hasess=-1;
 			}
-			
+
 			if (hasperm!=0 && hasmoney!=0 && hasess!=0) {
 				if(charge) {
 
@@ -1035,29 +1036,29 @@ public class PortalClass implements Listener {
 		}
 		return false;
 	  }
-	  
+
   /**/
-	  
+
 	  @SuppressWarnings("deprecation")
 	public void usePortal(Player p, CPortal cportal) {
 		  //When everything is ready and player is good to go use this so it will teleport him to the other world, find near portals or create new, etc etc etc
 			World w = cportal.getWorld();
 			boolean re = false;
-			
+
 			Location loc = new Location(w, cportal.getLocation().getX(), cportal.getLocation().getY(), cportal.getLocation().getZ(), p.getLocation().getYaw(), p.getLocation().getPitch());
-			
+
 			File pdLp = new File("plugins/Dimensions/PlayerData/"+p.getName()+"/LastPortal.yml");
 			YamlConfiguration pdlpf = YamlConfiguration.loadConfiguration(pdLp);
-			
+
 	          List<String> lup = pdlpf.getStringList("LastUsedP");
 	          List<String> luw = pdlpf.getStringList("LastUsedW");
-	          
+
 	          if (!lup.isEmpty() && lup.contains(cportal.getName())) {
 	        	  for (int x=0;x<=lup.size();++x) {
 	        		  String port = lup.get(x);
 	        		  String world = luw.get(x);
 	        		  World worldd = Bukkit.getServer().getWorld(world);
-	        		  
+
 			        	  if (cportal.getName().equals(port)) {
 			        		  luw.remove(world);
 			        		  lup.remove(port);
@@ -1068,7 +1069,7 @@ public class PortalClass implements Listener {
 			    			} catch (IOException e) {
 			    				e.printStackTrace();
 			    			}
-			      			
+
 			      				re=true;
 			        		  loc.setWorld(worldd);
 			        		  cportal.setTeleportLocation(loc);
@@ -1092,16 +1093,16 @@ public class PortalClass implements Listener {
 					}
 	        	  }
 	          }
-	          
-	          
+
+
 	          //---------------------------------------------------------------
 	          if (isNotOnClaimedLand(p, cportal)) {
 					if (!isInRegion(p, cportal)) {
-				
+
 			boolean spoa = false;
-				
+
 			boolean isOnLand = false;
-			
+
 			if (cportal.getWorldType().equalsIgnoreCase("sky") && !re) {
 				  isOnLand = true;
 			      cportal.setTeleportLocation(loc);
@@ -1129,7 +1130,7 @@ public class PortalClass implements Listener {
 					cportal.setTeleportLocation(loc);
 		      }
 	        }
-			
+
 			if (isOnLand == true) {
 				loc = new Location(loc.getWorld(), loc.getX(), loc.getY()+1, loc.getZ());
 		          if (cportal.getRandomLocationEnabled()) {
@@ -1140,7 +1141,7 @@ public class PortalClass implements Listener {
 			            loc.setZ(z);
 			            cportal.setTeleportLocation(loc);
 			          }
-						
+
 			          if (re == false) {
 				          if (cportal.getWorldType().equalsIgnoreCase("normal")) {
 				        	  cportal.setTeleportLocation(loc);
@@ -1159,11 +1160,11 @@ public class PortalClass implements Listener {
 						      } else {
 							        double ni = loc.getY();
 							        double sy = 250;
-							        
+
 							        double nx = loc.getY();
 							        double x = loc.getY();
 							        double mx = 0;
-							        
+
 									while (!isOnLand) {
 										if (loc.getBlock().getType() != Material.AIR) {
 											loc.setY(sy);
@@ -1192,13 +1193,13 @@ public class PortalClass implements Listener {
 						      }
 				        	  cportal.setTeleportLocation(loc);
 				          } else if (cportal.getWorldType().contains(":")) {
-				        	  
+
 				        	 int sc = Integer.parseInt(cportal.getWorldType().split(":")[0])/Integer.parseInt(cportal.getWorldType().split(":")[1]);
-				        	  
-				        	  
+
+
 				        	  loc.setX(cportal.getTeleportLocation().getX()*sc);
 				        	  loc.setZ(cportal.getTeleportLocation().getZ()*sc);
-				        	  
+
 				        	  cportal.setTeleportLocation(loc);
 				          }
 			          } else if(re == true) {
@@ -1214,11 +1215,11 @@ public class PortalClass implements Listener {
 				        	  cportal.setTeleportLocation(loc);
 				          } else if (cportal.getWorldType().contains(":")) {
 					        	 int sc = Integer.parseInt(cportal.getWorldType().split(":")[0])/Integer.parseInt(cportal.getWorldType().split(":")[1]);
-					        	  
-					        	  
+
+
 					        	  loc.setX(cportal.getTeleportLocation().getX()/sc);
 					        	  loc.setZ(cportal.getTeleportLocation().getZ()/sc);
-					        	  
+
 					        	  cportal.setTeleportLocation(loc);
 				          }
 			          }
@@ -1231,20 +1232,20 @@ public class PortalClass implements Listener {
 					double cz = Double.parseDouble(cords[2]);
 					Location nloc = new Location(loc.getWorld(), cx, cy, cz);
 					Location nnloc = new Location(loc.getWorld(), cx, cy+1, cz);
-					if (nloc.getBlock().getRelative(BlockFace.EAST).getType().equals(Material.STAINED_GLASS_PANE)) {
+					if (nloc.getBlock().getRelative(BlockFace.EAST).getType().equals(cportal.getGlassData())) {
 						nnloc.add(2,-1,0.5);
 					}
-					
-					if (nloc.getBlock().getRelative(BlockFace.WEST).getType().equals(Material.STAINED_GLASS_PANE)) {
+
+					if (nloc.getBlock().getRelative(BlockFace.WEST).getType().equals(cportal.getGlassData())) {
 						nnloc.add(-2,-1,-0.5);
 					}
-					
-					if (nloc.getBlock().getRelative(BlockFace.SOUTH).getType().equals(Material.STAINED_GLASS_PANE)) {
-						nnloc.add(0.5,-1,2);	
+
+					if (nloc.getBlock().getRelative(BlockFace.SOUTH).getType().equals(cportal.getGlassData())) {
+						nnloc.add(0.5,-1,2);
 					}
-					
-					if (nloc.getBlock().getRelative(BlockFace.NORTH).getType().equals(Material.STAINED_GLASS_PANE)) {
-						nnloc.add(-0.5,-1,-2);	
+
+					if (nloc.getBlock().getRelative(BlockFace.NORTH).getType().equals(cportal.getGlassData())) {
+						nnloc.add(-0.5,-1,-2);
 					}
 					cportal.setTeleportLocation(nnloc);
 					EnterCPortalEvent event = new EnterCPortalEvent(p, cportal.getLocation(), cportal);
@@ -1260,7 +1261,7 @@ public class PortalClass implements Listener {
 					}
 					us.add(p);
 				} else {
-					
+
 					Location nloctp = new Location(cportal.getTeleportLocation().getWorld(), cportal.getTeleportLocation().getX(), cportal.getTeleportLocation().getY()-1, cportal.getTeleportLocation().getZ()+1.5);
 					cportal.setTeleportLocation(nloctp);
 					EnterCPortalEvent event = new EnterCPortalEvent(p, cportal.getLocation(), cportal);
@@ -1273,66 +1274,41 @@ public class PortalClass implements Listener {
 							}
 						}
 					}
-					
+
 					if (cportal.getBuildExitPortalEnabled()) {
-						
+
 					      if (cportal.getSpawnOnAirEnabled() || spoa) {
 								p.getLocation().getBlock().getRelative(BlockFace.DOWN).setType(cportal.getMaterial());
-								p.getLocation().getBlock().getRelative(BlockFace.DOWN).setData((byte) cportal.getData());
 								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH).getRelative(BlockFace.EAST).setType(cportal.getMaterial());
-								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH).getRelative(BlockFace.EAST).setData((byte) cportal.getData());
 								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.EAST).setType(cportal.getMaterial());
-								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.EAST).setData((byte) cportal.getData());
 								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH).getRelative(BlockFace.WEST).setType(cportal.getMaterial());
-								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH).getRelative(BlockFace.WEST).setData((byte) cportal.getData());
 								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.WEST).setType(cportal.getMaterial());
-								p.getLocation().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.WEST).setData((byte) cportal.getData());
 					      }
-						
+
 					p.getLocation().getBlock().getRelative(BlockFace.DOWN).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.DOWN).setData((byte) cportal.getData());
 					p.getLocation().getBlock().setType(cportal.getMaterial());
-					p.getLocation().getBlock().setData((byte) cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.UP).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.UP).setData((byte)cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.UP,2).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.UP,2).setData((byte)cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.UP,3).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.UP,3).setData((byte) cportal.getData());
-					
+
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.DOWN).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.DOWN).setData((byte)cportal.getData());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).setType(Material.STAINED_GLASS_PANE);
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).setData((byte)cportal.getGlassData());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP).setType(Material.STAINED_GLASS_PANE);
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP).setData((byte)cportal.getGlassData());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP,2).setType(Material.STAINED_GLASS_PANE);
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP,2).setData((byte)cportal.getGlassData());
+					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).setType(cportal.getGlassData());
+					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP).setType(cportal.getGlassData());
+					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP,2).setType(cportal.getGlassData());
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP,3).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH).getRelative(BlockFace.UP,3).setData((byte)cportal.getData());
-					
+
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.DOWN).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.DOWN).setData((byte)cportal.getData());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).setType(Material.STAINED_GLASS_PANE);
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).setData((byte)cportal.getGlassData());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP).setType(Material.STAINED_GLASS_PANE);
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP).setData((byte)cportal.getGlassData());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP,2).setType(Material.STAINED_GLASS_PANE);
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP,2).setData((byte)cportal.getGlassData());
+					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).setType(cportal.getGlassData());
+					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP).setType(cportal.getGlassData());
+					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP,2).setType(cportal.getGlassData());
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP,3).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 2).getRelative(BlockFace.UP,3).setData((byte)cportal.getData());
-					
+
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.DOWN).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.DOWN).setData((byte)cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).setData((byte)cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.UP).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.UP).setData((byte)cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.UP,2).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.UP,2).setData((byte)cportal.getData());
 					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.UP,3).setType(cportal.getMaterial());
-					p.getLocation().getBlock().getRelative(BlockFace.SOUTH, 3).getRelative(BlockFace.UP,3).setData((byte)cportal.getData());
-					
+
 					p.teleport(p.getLocation().add(0,0,1));
 					}
 					us.add(p);
@@ -1351,61 +1327,59 @@ public class PortalClass implements Listener {
 					us.add(p);
 				}
 	  }
-	  
-		@SuppressWarnings("deprecation")
-		public boolean testForNearPortal(Block block, int radius, Material mat, int id, int fid) {
+
+		public boolean testForNearPortal(Block block, int radius, Material mat, Material glass) {
 			for(int i = -radius; i <= radius; i++) {
 			    for(int j = -radius; j <= radius; j++) {
 			        for(int k = -radius; k <= radius; k++) {
-			            if(block.getRelative(i, j, k).getType() == mat && ((id==-1) || (block.getRelative(i, j, k).getState().getRawData() == id))) {
-			            	Location nloc = new Location(block.getWorld(), (block.getLocation().getX()+i), (block.getLocation().getY()+j), (block.getLocation().getZ()+k));
-			            	if (nloc.getBlock().getRelative(BlockFace.EAST).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.EAST).getState().getRawData()==fid)) {
-				            	return true;
-				            	}
-			            	if (nloc.getBlock().getRelative(BlockFace.WEST).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.WEST).getState().getRawData()==fid)) {
-			            		return true;
-				            	}
-			            	if (nloc.getBlock().getRelative(BlockFace.SOUTH).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.SOUTH).getState().getRawData()==fid)) {
-			            		return true;
-				            	}
-			            	if (nloc.getBlock().getRelative(BlockFace.NORTH).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.NORTH).getState().getRawData()==fid)) {
-			            		return true;
-				            	}
-			            }
+						if(block.getRelative(i, j, k).getType() == mat) {
+							Location nloc = new Location(block.getWorld(), (block.getLocation().getX()+i), (block.getLocation().getY()+j), (block.getLocation().getZ()+k));
+							for (BlockFace face : BlockFace.values())
+							{
+								switch(face)
+								{
+									case NORTH:
+									case SOUTH:
+									case EAST:
+									case WEST:
+										if (nloc.getBlock().getRelative(face).getType().equals(glass))
+											return true;
+								}
+							}
+						}
 			        }
 			    }
 			}
 			return false;
 		}
-		@SuppressWarnings("deprecation")
-		public String testForNearPortalLoc(Block block, int radius, Material mat, int id, int fid) {
+
+		public String testForNearPortalLoc(Block block, int radius, Material mat, Material glass) {
 			for(int i = -radius; i <= radius; i++) {
 			    for(int j = -radius; j <= radius; j++) {
 			        for(int k = -radius; k <= radius; k++) {
-			            if(block.getRelative(i, j, k).getType() == mat && ((id==-1) || (block.getRelative(i, j, k).getState().getRawData() == id))) {
+			            if(block.getRelative(i, j, k).getType() == mat) {
 			            	Location nloc = new Location(block.getWorld(), (block.getLocation().getX()+i), (block.getLocation().getY()+j), (block.getLocation().getZ()+k));
-			            	if (nloc.getBlock().getRelative(BlockFace.EAST).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.EAST).getState().getRawData()==fid)) {
-				            	return (block.getLocation().getX()+i)+" "+(block.getLocation().getY()+j)+" "+(block.getLocation().getZ()+k);
-				            	}
-			            	if (nloc.getBlock().getRelative(BlockFace.WEST).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.WEST).getState().getRawData()==fid)) {
-				            	return (block.getLocation().getX()+i)+" "+(block.getLocation().getY()+j)+" "+(block.getLocation().getZ()+k);
-				            	}
-			            	if (nloc.getBlock().getRelative(BlockFace.SOUTH).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.SOUTH).getState().getRawData()==fid)) {
-				            	return (block.getLocation().getX()+i)+" "+(block.getLocation().getY()+j)+" "+(block.getLocation().getZ()+k);
-				            	}
-			            	if (nloc.getBlock().getRelative(BlockFace.NORTH).getType().equals(Material.STAINED_GLASS_PANE) && (nloc.getBlock().getRelative(BlockFace.NORTH).getState().getRawData()==fid)) {
-				            	return (block.getLocation().getX()+i)+" "+(block.getLocation().getY()+j)+" "+(block.getLocation().getZ()+k);
-				            	}
+			            	for (BlockFace face : BlockFace.values())
+							{
+								switch(face)
+								{
+									case NORTH:
+									case SOUTH:
+									case EAST:
+									case WEST:
+										if (nloc.getBlock().getRelative(face).getType().equals(glass))
+											return (block.getLocation().getX()+i)+" "+(block.getLocation().getY()+j)+" "+(block.getLocation().getZ()+k);
+								}
+							}
 			            }
 			        }
 			    }
 			}
 			return null;
 		}
-	  
-		
+
+
 		//This will return if portal is legit (aka if it is lit and doesnt have missing blocks etc)
-		@SuppressWarnings("deprecation")
 		public boolean isInFullPortal(CPortal cportal) {
 			 if (isInPortal(cportal)) {
 				 boolean hsg = false;
@@ -1415,34 +1389,34 @@ public class PortalClass implements Listener {
 						 hsg=true;
 					 }
 				 if (hsg) {
-					 if (((cportal.getLocation().getBlock().getType().equals(Material.STAINED_GLASS_PANE) && cportal.getLocation().getBlock().getState().getRawData() == cportal.getGlassData()) && cportal.getLocation().getBlock().getState().getRawData() == cportal.getGlassData())||(cportal.getLocation().getBlock().getType().equals(cportal.getMaterial())&&cportal.getLocation().getBlock().getState().getRawData() == cportal.getData())) {
+					 if ((cportal.getLocation().getBlock().getType().equals(cportal.getGlassData()))||cportal.getLocation().getBlock().getType().equals(cportal.getMaterial())) {
 						 return true;
-					 } 
+					 }
 				 }
 			 }
 			 return false;
 		}
 
-	  
+
 	  /*LIGHT PORTAL*/
-	  
+
 	  @SuppressWarnings("deprecation")
 	public boolean canLightPortalEW(CPortal cportal) {
 		  boolean isEUp = false;
 		  boolean isWUp = false;
-		  
+
 		  boolean isEDown = false;
 		  boolean isWDown = false;
-		  
+
 		  Location ploc = cportal.getLocation();
-		  
+
 		  if (true) {
 			    Location location = ploc.clone();
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(1, 0, 0);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1467,9 +1441,9 @@ public class PortalClass implements Listener {
 			        location.add(-1, 0, 0);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
-				        		if (cportal.getData()==-1) {
+				        		if (true) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
 				        			} else {break;}
 				        		} else {break;}
@@ -1492,7 +1466,7 @@ public class PortalClass implements Listener {
 			        location.add(1, 0, 0);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1517,7 +1491,7 @@ public class PortalClass implements Listener {
 			        location.add(-1, 0, 0);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1536,22 +1510,22 @@ public class PortalClass implements Listener {
 			        }
 			    }
 		  }
-		  
+
 		  if (isEUp && isWUp && isEDown && isWDown) {
 			  return true;
 		  } else {
 			  return false;
 		  }
 	  }
-	  
+
 	  @SuppressWarnings("deprecation")
 	public boolean canLightPortalNS(CPortal cportal) {
 		  boolean isNUp = false;
 		  boolean isSUp = false;
-		  
+
 		  boolean isNDown = false;
 		  boolean isSDown = false;
-		  
+
 		  Location ploc = cportal.getLocation();
 		  if (true) {
 			    Location location = ploc.clone();
@@ -1559,7 +1533,7 @@ public class PortalClass implements Listener {
 			        location.add(0, 0, 1);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1584,7 +1558,7 @@ public class PortalClass implements Listener {
 			        location.add(0, 0, -1);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1609,7 +1583,7 @@ public class PortalClass implements Listener {
 			        location.add(0, 0, 1);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1634,7 +1608,7 @@ public class PortalClass implements Listener {
 			        location.add(0, 0, -1);
 			        if (location.getBlock().getType().equals(Material.AIR)||location.getBlock().getType().equals(Material.FIRE)) {
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1659,11 +1633,11 @@ public class PortalClass implements Listener {
 			  return false;
 		  }
 	  }
-	  
+
 	  @SuppressWarnings("deprecation")
 	public void lightPortalEW(CPortal cportal) {
 		  Location ploc = cportal.getLocation();
-		  
+
 		  if (true) {
 			    Location location = ploc.clone();
 			    for (int blocks = 1; blocks <= rad; blocks++) {
@@ -1672,7 +1646,7 @@ public class PortalClass implements Listener {
 			        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 			        	location.getBlock().setData((byte) cportal.getGlassData());
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1699,7 +1673,7 @@ public class PortalClass implements Listener {
 			        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 			        	location.getBlock().setData((byte) cportal.getGlassData());
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1726,7 +1700,7 @@ public class PortalClass implements Listener {
 			        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 			        	location.getBlock().setData((byte) cportal.getGlassData());
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {	
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1753,10 +1727,10 @@ public class PortalClass implements Listener {
 			        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 			        	location.getBlock().setData((byte) cportal.getGlassData());
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
-				        			if (location.getBlock().getType() == cportal.getMaterial()) {	
+				        			if (location.getBlock().getType() == cportal.getMaterial()) {
 				        			} else {break;}
 				        		} else {break;}
 				        	}
@@ -1773,11 +1747,11 @@ public class PortalClass implements Listener {
 			    }
 		  }
 	  }
-	  
+
 	  @SuppressWarnings("deprecation")
 	public void lightPortalNS(CPortal cportal) {
 		  Location ploc = cportal.getLocation();
-		  
+
 		  if (true) {
 			    Location location = ploc.clone();
 			    for (int blocks = 1; blocks <= rad; blocks++) {
@@ -1786,7 +1760,7 @@ public class PortalClass implements Listener {
 			        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 			        	location.getBlock().setData((byte) cportal.getGlassData());
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
 				        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1813,7 +1787,7 @@ public class PortalClass implements Listener {
 		        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 		        	location.getBlock().setData((byte) cportal.getGlassData());
 			        }else {
-			        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+			        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 			        	} else {
 			        		if (cportal.getData()==-1) {
 			        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1840,7 +1814,7 @@ public class PortalClass implements Listener {
 		        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 		        	location.getBlock().setData((byte) cportal.getGlassData());
 			        }else {
-			        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+			        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 			        	} else {
 			        		if (cportal.getData()==-1) {
 			        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -1867,10 +1841,10 @@ public class PortalClass implements Listener {
 			        	location.getBlock().setType(Material.STAINED_GLASS_PANE);
 			        	location.getBlock().setData((byte) cportal.getGlassData());
 				        }else {
-				        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+				        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 				        	} else {
 				        		if (cportal.getData()==-1) {
-				        			if (location.getBlock().getType() == cportal.getMaterial()) {	
+				        			if (location.getBlock().getType() == cportal.getMaterial()) {
 				        			} else {break;}
 				        		} else {break;}
 				        	}
@@ -1887,14 +1861,14 @@ public class PortalClass implements Listener {
 			    }
 		  }
 	  }
-	  
+
 	  /**/
 		@SuppressWarnings("deprecation")
 		@EventHandler
 		  public void onBlockPlace(BlockPlaceEvent e) {
-			  
+
 			  Block b = e.getBlockPlaced();
-			  
+
 			  //Light the portal
 			 if (b.getType()== Material.FIRE) {
 				 CPortal cportal = getPortal(b.getLocation());
@@ -1904,10 +1878,10 @@ public class PortalClass implements Listener {
 							 if (canLightPortalEW(cportal)) {
 								  int eastf = east.get(cportal);
 								  int westf = Math.abs(west.get(cportal))-1;
-								  
+
 								  int upf = up.get(cportal);
 								  int downf = Math.abs(down.get(cportal))-1;
-								
+
 								if ((eastf+westf>=cportal.getMinWidth()) && (upf+downf>=cportal.getMinHeight())) {
 									CreateCPortalEvent event = new CreateCPortalEvent(e.getPlayer(), e.getBlockPlaced().getLocation(), cportal, upf+downf, eastf+westf);
 									 Bukkit.getServer().getPluginManager().callEvent(event);
@@ -1936,17 +1910,17 @@ public class PortalClass implements Listener {
 					 }
 				 }
 			 }
-			  
+
 		  }
 		/*LIGHT PORTAL*/
-		
+
 			@SuppressWarnings("deprecation")
 			@EventHandler
 			  public void onBlockBreak(BlockBreakEvent e) {
 				@SuppressWarnings("unused")
 				Player p = e.getPlayer();
 				  Block b = e.getBlock();
-				  
+
 
 				  //If a block of the portal is broken all of the glass should be gone
 				  //or if a block of glass is broken should do the same thing
@@ -2143,15 +2117,15 @@ public class PortalClass implements Listener {
 										}
 										e.setCancelled(false);
 						 }
-						 
+
 					 }
-				  
+
 			  }
-		
+
 		  @SuppressWarnings("deprecation")
 			public void destroyLightEW(CPortal cportal) {
 			  Location ploc = cportal.getLocation();
-			  
+
 			  if (true) {
 				    Location location = ploc.clone();
 				    for (int blocks = 1; blocks <= rad; blocks++) {
@@ -2159,7 +2133,7 @@ public class PortalClass implements Listener {
 				        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 				        	location.getBlock().setType(Material.AIR);
 					        }else {
-					        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+					        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 					        	} else {
 					        		if (cportal.getData()==-1) {
 					        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -2185,7 +2159,7 @@ public class PortalClass implements Listener {
 				        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 				        	location.getBlock().setType(Material.AIR);
 					        }else {
-					        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+					        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 					        	} else {
 					        		if (cportal.getData()==-1) {
 					        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -2211,7 +2185,7 @@ public class PortalClass implements Listener {
 				        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 				        	location.getBlock().setType(Material.AIR);
 					        }else {
-					        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {	
+					        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 					        	} else {
 					        		if (cportal.getData()==-1) {
 					        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -2237,10 +2211,10 @@ public class PortalClass implements Listener {
 				        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 				        	location.getBlock().setType(Material.AIR);
 					        }else {
-					        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+					        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 					        	} else {
 					        		if (cportal.getData()==-1) {
-					        			if (location.getBlock().getType() == cportal.getMaterial()) {	
+					        			if (location.getBlock().getType() == cportal.getMaterial()) {
 					        			} else {break;}
 					        		} else {break;}
 					        	}
@@ -2257,11 +2231,11 @@ public class PortalClass implements Listener {
 				    }
 			  }
 			  }
-			  
+
 			  @SuppressWarnings("deprecation")
 			public void destroyLightNS(CPortal cportal) {
 				  Location ploc = cportal.getLocation();
-				  
+
 				  if (true) {
 					    Location location = ploc.clone();
 					    for (int blocks = 1; blocks <= rad; blocks++) {
@@ -2269,7 +2243,7 @@ public class PortalClass implements Listener {
 					        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 					        	location.getBlock().setType(Material.AIR);
 						        }else {
-						        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+						        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 						        	} else {
 						        		if (cportal.getData()==-1) {
 						        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -2295,7 +2269,7 @@ public class PortalClass implements Listener {
 				        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 				        	location.getBlock().setType(Material.AIR);
 					        }else {
-					        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+					        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 					        	} else {
 					        		if (cportal.getData()==-1) {
 					        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -2321,7 +2295,7 @@ public class PortalClass implements Listener {
 				        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 				        	location.getBlock().setType(Material.AIR);
 					        }else {
-					        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+					        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 					        	} else {
 					        		if (cportal.getData()==-1) {
 					        			if (location.getBlock().getType() == cportal.getMaterial()) {
@@ -2347,7 +2321,7 @@ public class PortalClass implements Listener {
 					        if (location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)||location.getBlock().getType().equals(Material.AIR)) {
 					        	location.getBlock().setType(Material.AIR);
 						        }else {
-						        	if ((location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) || location.getBlock().getType().equals(Material.STAINED_GLASS_PANE)) {
+						        	if (location.getBlock().getType() == cportal.getMaterial() || location.getBlock().getType().equals(cportal.getGlassData())) {
 						        	} else {
 						        		if (cportal.getData()==-1) {
 						        			if (location.getBlock().getType() == cportal.getMaterial()) {	
