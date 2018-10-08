@@ -94,7 +94,6 @@ public class PortalClass implements Listener {
 	  }
 	
 	  //If player is in any portal
-	  @SuppressWarnings("deprecation")
 		public boolean isInPortal(CPortal cportal) {
 		  
 		  Location ploc = cportal.getLocation();
@@ -112,19 +111,11 @@ public class PortalClass implements Listener {
 			    Location location = ploc.clone();
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(0, -1, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-				        	down.put(cportal, (int) (location.getY()-ploc.getY()));
-				        	isDown=true;
-				            break;
-				        }
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-				        	down.put(cportal, (int) (location.getY()-ploc.getY()));
-				        	isDown=true;
-				            break;
-				        }
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						down.put(cportal, (int) (location.getY()-ploc.getY()));
+						isDown=true;
+						break;
+					}
 
 			    }
 	  		}
@@ -132,19 +123,11 @@ public class PortalClass implements Listener {
 	  		    Location location = ploc.clone();
 	  		    for (int blocks = 1; blocks <= rad; blocks++) {
 	  		        location.add(0, 1, 0);
-	  		        if (cportal.getData()==-1) {
-	  			        if (location.getBlock().getType() == cportal.getMaterial()) {
-	  			        	up.put(cportal, (int) (location.getY()-ploc.getY()));
-	  			        	isUp=true;
-	  			            break;
-	  			        }
-	  		        } else {
-	  			        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-	  			        	up.put(cportal, (int) (location.getY()-ploc.getY()));
-	  			        	isUp=true;
-	  			            break;
-	  			        }	
-	  		        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						up.put(cportal, (int) (location.getY()-ploc.getY()));
+						isUp=true;
+						break;
+					}
 	  		    }
 	  		}
 		    
@@ -152,76 +135,44 @@ public class PortalClass implements Listener {
 	  		    Location location = ploc.clone();
 	  		    for (int blocks = 1; blocks <= rad; blocks++) {
 	  		        location.add(1, 0, 0);
-	  		        if (cportal.getData()==-1) {
-	  			        if (location.getBlock().getType() == cportal.getMaterial()) {
-	  			        	east.put(cportal, (int) (location.getX()-ploc.getX()));
-	  			        	isEast=true;
-	  			            break;
-	  			        }
-	  		        } else {
-	  			        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-	  			        	east.put(cportal, (int) (location.getX()-ploc.getX()));
-	  			        	isEast=true;
-	  			            break;
-	  			        }	
-	  		        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						east.put(cportal, (int) (location.getX()-ploc.getX()));
+						isEast=true;
+						break;
+					}
 	  		    }
 	  		}
 	  		if (true) {
 	  		    Location location = ploc.clone();
 	  		    for (int blocks = 1; blocks <= rad; blocks++) {
 	  		        location.add(-1, 0, 0);
-	  		        if (cportal.getData()==-1) {
-	  			        if (location.getBlock().getType() == cportal.getMaterial()) {
-	  			        	west.put(cportal, (int)(location.getX()-ploc.getX()));
-	  			        	isWest=true;
-	  			            break;
-	  			        }
-	  		        } else {
-	  			        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-	  			        	west.put(cportal, (int)(location.getX()-ploc.getX()));
-	  			        	isWest=true;
-	  			            break;
-	  			        }	
-	  		        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						west.put(cportal, (int)(location.getX()-ploc.getX()));
+						isWest=true;
+						break;
+					}
 	  		    }
 	  		}
 	  		if (true) {
 	  		    Location location = ploc.clone();
 	  		    for (int blocks = 1; blocks <= rad; blocks++) {
 	  		        location.add(0, 0, 1);
-	  		        if (cportal.getData()==-1) {
-	  			        if (location.getBlock().getType() == cportal.getMaterial()) {
-	  			        	south.put(cportal, (int)(location.getZ()-ploc.getZ()));
-	  			        	isSouth=true;
-	  			            break;
-	  			        }
-	  		        } else {
-	  			        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-	  			        	south.put(cportal, (int)(location.getZ()-ploc.getZ()));
-	  			        	isSouth=true;
-	  			            break;
-	  			        }	
-	  		        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						south.put(cportal, (int)(location.getZ()-ploc.getZ()));
+						isSouth=true;
+						break;
+					}
 	  		    }
 	  		}
 	  		if (true) {
 	  		    Location location = ploc.clone();
 	  		    for (int blocks = 1; blocks <= rad; blocks++) {
 	  		        location.add(0, 0, -1);
-	  		        if (cportal.getData()==-1) {
-	  			        if (location.getBlock().getType() == cportal.getMaterial()) {
-	  			        	north.put(cportal, (int)(location.getZ()-ploc.getZ()));
-	  			        	isNorth=true;
-	  			            break;
-	  			        }
-	  		        } else {
-	  			        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-	  			        	north.put(cportal, (int)(location.getZ()-ploc.getZ()));
-	  			        	isNorth=true;
-	  			            break;
-	  			        }	
-	  		        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						north.put(cportal, (int)(location.getZ()-ploc.getZ()));
+						isNorth=true;
+						break;
+					}
 	  		    }
 	  		}
 	  		
@@ -245,7 +196,6 @@ public class PortalClass implements Listener {
 	  
 	  //Code here is repeating code to see if portal is actually a portal and how big it is
 	  //vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\\
-	  @SuppressWarnings("deprecation")
 	public boolean isFullPortalEW(CPortal cportal) {
 		  Location ploc = cportal.getLocation();
 		  
@@ -264,37 +214,20 @@ public class PortalClass implements Listener {
 			    location.add(0, down.get(cportal), 0);
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(1, 0, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-					        eastf += 1;
-				        	if (eastf==east.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(-1, 0, 0);
-				        		isFEast=true;
-				        		break;
-				        	}
-				        } else if (eastf==(east.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(-1, 0, 0);
-				        	isFEast=true;
-			        		break;
-			        	} else {eastf -= 1;}
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-					        eastf += 1;
-				        	if (eastf==east.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(-1, 0, 0);
-					        	isFEast=true;
-				        		break;
-				        	}
-				        } else if (eastf==(east.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(-1, 0, 0);
-				        	isFEast=true;
-			        		break;
-			        	} else {eastf -= 1;}	
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						eastf += 1;
+						if (eastf==east.get(cportal)) {
+							eastf-=1;
+							location.add(-1, 0, 0);
+							isFEast=true;
+							break;
+						}
+					} else if (eastf==(east.get(cportal)-1)) {
+						eastf-=1;
+						location.add(-1, 0, 0);
+						isFEast=true;
+						break;
+					} else {eastf -= 1;}
 			    }
 		  }
 		  if (true) {
@@ -303,37 +236,20 @@ public class PortalClass implements Listener {
 			    location.add(0, down.get(cportal), 0);
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(-1, 0, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-					        eastf -= 1;
-				        	if (eastf==west.get(cportal)) {
-					        	eastf+=1;
-					        	location.add(1, 0, 0);
-					        	isFWest=true;
-				        		break;
-				        	}
-				        } else if (eastf==(west.get(cportal)+1)) {
-				        	eastf+=1;
-				        	location.add(1, 0, 0);
-				        	isFWest=true;
-			        		break;
-			        	} else {eastf += 1;}
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-					        eastf -= 1;
-				        	if (eastf==west.get(cportal)) {
-					        	eastf+=1;
-					        	location.add(1, 0, 0);
-					        	isFWest=true;
-				        		break;
-				        	}
-				        } else if (eastf==(west.get(cportal)+1)) {
-				        	eastf+=1;
-				        	location.add(1, 0, 0);
-				        	isFWest=true;
-			        		break;
-			        	} else {eastf += 1;}	
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						eastf -= 1;
+						if (eastf==west.get(cportal)) {
+							eastf+=1;
+							location.add(1, 0, 0);
+							isFWest=true;
+							break;
+						}
+					} else if (eastf==(west.get(cportal)+1)) {
+						eastf+=1;
+						location.add(1, 0, 0);
+						isFWest=true;
+						break;
+					} else {eastf += 1;}
 			    }
 		  }
 		  if (true) {
@@ -342,37 +258,20 @@ public class PortalClass implements Listener {
 			    location.add(0, up.get(cportal), 0);
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(-1, 0, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-					        eastf -= 1;
-				        	if (eastf==west.get(cportal)) {
-					        	eastf+=1;
-					        	location.add(1, 0, 0);
-					        	isTWest=true;
-				        		break;
-				        	}
-				        } else if (eastf==(west.get(cportal)+1)) {
-				        	eastf+=1;
-				        	location.add(1, 0, 0);
-				        	isTWest=true;
-			        		break;
-			        	} else {eastf += 1;}
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-					        eastf -= 1;
-				        	if (eastf==west.get(cportal)) {
-				        		eastf+=1;
-					        	location.add(1, 0, 0);
-					        	isTWest=true;
-				        		break;
-				        	}
-				        } else if (eastf==(west.get(cportal)+1)) {
-				        	eastf+=1;
-				        	location.add(1, 0, 0);
-				        	isTWest=true;
-			        		break;
-			        	} else {eastf += 1;}	
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						eastf -= 1;
+						if (eastf==west.get(cportal)) {
+							eastf+=1;
+							location.add(1, 0, 0);
+							isFWest=true;
+							break;
+						}
+					} else if (eastf==(west.get(cportal)+1)) {
+						eastf+=1;
+						location.add(1, 0, 0);
+						isFWest=true;
+						break;
+					} else {eastf += 1;}
 			    }
 		  }
 		  if (true) {
@@ -381,37 +280,20 @@ public class PortalClass implements Listener {
 			    location.add(0, up.get(cportal), 0);
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(1, 0, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-					        eastf += 1;
-				        	if (eastf==east.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(-1, 0, 0);
-					        	isTEast=true;
-				        		break;
-				        	}
-				        } else if (eastf==(east.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(-1, 0, 0);
-				        	isTEast=true;
-			        		break;
-			        	} else {eastf -= 1;}
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-					        eastf += 1;
-				        	if (eastf==east.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(-1, 0, 0);
-					        	isTEast=true;
-				        		break;
-				        	}
-				        } else if (eastf==(east.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(-1, 0, 0);
-				        	isTEast=true;
-			        		break;
-			        	} else {eastf -= 1;}	
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						eastf += 1;
+						if (eastf==east.get(cportal)) {
+							eastf-=1;
+							location.add(-1, 0, 0);
+							isTEast=true;
+							break;
+						}
+					} else if (eastf==(east.get(cportal)-1)) {
+						eastf-=1;
+						location.add(-1, 0, 0);
+						isTEast=true;
+						break;
+					} else {eastf -= 1;}
 			    }
 		  }
 		  if (true) {
@@ -420,37 +302,20 @@ public class PortalClass implements Listener {
 			    location.add(east.get(cportal), 0, 0);
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(0, 1, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-					        eastf += 1;
-				        	if (eastf==up.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(0, -1, 0);
-					        	isWEast=true;
-				        		break;
-				        	}
-				        } else if (eastf==(up.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(0, -1, 0);
-				        	isWEast=true;
-			        		break;
-			        	} else {eastf -= 1;}
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-					        eastf += 1;
-				        	if (eastf==up.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(0, -1, 0);
-					        	isWEast=true;
-				        		break;
-				        	}
-				        } else if (eastf==(up.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(0, -1, 0);
-				        	isWEast=true;
-			        		break;
-			        	} else {eastf -= 1;}	
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						eastf += 1;
+						if (eastf==up.get(cportal)) {
+							eastf-=1;
+							location.add(0, -1, 0);
+							isWEast=true;
+							break;
+						}
+					} else if (eastf==(up.get(cportal)-1)) {
+						eastf-=1;
+						location.add(0, -1, 0);
+						isWEast=true;
+						break;
+					} else {eastf -= 1;}
 			    }
 		  }
 		  if (true) {
@@ -459,37 +324,20 @@ public class PortalClass implements Listener {
 			    location.add(west.get(cportal), 0, 0);
 			    for (int blocks = 1; blocks <= rad; blocks++) {
 			        location.add(0, 1, 0);
-			        if (cportal.getData()==-1) {
-				        if (location.getBlock().getType() == cportal.getMaterial()) {
-					        eastf += 1;
-				        	if (eastf==up.get(cportal)) {
-					        	eastf-=1;
-					        	location.add(0, -1, 0);
-					        	isWWest=true;
-				        		break;
-				        	}
-				        } else if (eastf==(up.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(0, -1, 0);
-				        	isWWest=true;
-			        		break;
-			        	} else {eastf -= 1;}
-			        } else {
-				        if (location.getBlock().getType() == cportal.getMaterial() && location.getBlock().getState().getRawData() == cportal.getData()) {
-					        eastf += 1;
-				        	if (eastf==up.get(cportal)) {
-				        		eastf-=1;
-					        	location.add(0, -1, 0);
-					        	isWWest=true;
-				        		break;
-				        	}
-				        } else if (eastf==(up.get(cportal)-1)) {
-				        	eastf-=1;
-				        	location.add(0, -1, 0);
-				        	isWWest=true;
-			        		break;
-			        	} else {eastf -= 1;}	
-			        }
+					if (location.getBlock().getType() == cportal.getMaterial()) {
+						eastf += 1;
+						if (eastf==up.get(cportal)) {
+							eastf-=1;
+							location.add(0, -1, 0);
+							isWWest=true;
+							break;
+						}
+					} else if (eastf==(up.get(cportal)-1)) {
+						eastf-=1;
+						location.add(0, -1, 0);
+						isWWest=true;
+						break;
+					} else {eastf -= 1;}
 			    }
 		  }
 		  
